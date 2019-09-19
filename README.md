@@ -2,14 +2,16 @@
 
 ## 1. 설명
 
-  - **주어진 NLP 모델**에 대해 단 하나의 perturbation 문장을 생성함으로써 모델을 속이는 **universal adversarial attack** 기법
+  - 주어진 NLP 모델에 대해 **단 하나의 perturbation 문장을 생성함**으로써 모델을 속이는 **Universal Adversarial Attack** 기법
   - Universal adversarial attack에 의해 생성되는 문장은 입력 문장에 추가되고, 이로 인해 문장의 분류 결과는 기존과 다르게 나타남
   - 제안 기법은 baseline 기법에 비해 약간 좋은 성능을 나타내고, 더욱 효율적으로 attack을 수행할 수 있음
 
 ## 2. 모델 구조
 
-  ![image](https://user-images.githubusercontent.com/26705935/50680219-3be50580-104a-11e9-9473-847d96b42dd9.png)
-  
+<div align="center">
+ <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/algorithm.png" width=80%><br>
+</div>
+
   (a) Original dataset을 이용하여 text classification 모델 학습
    - 분류 모델 : **embedding layer + 2 layer LSTM cell + FCN**
    - e (word embedding 차원) = 300
@@ -39,22 +41,28 @@
     
 ## 4. 결과
   - Qualitative result
-  
-    ![image](https://user-images.githubusercontent.com/26705935/51031975-b5986880-15e1-11e9-9978-ead103d627e5.png)
-    
+
+<div align="center">
+ <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/results.png" width=80%><br>
+</div>
+
     - Baseline과 거의 **유사한 성능**으로, 하지만 **더욱 빠르게** 실행 가능
     
   - Quantitative result
     - Adversarial text
     
-      ![image](https://user-images.githubusercontent.com/26705935/51032041-f2645f80-15e1-11e9-8b96-f7991fd5af01.png)
-      
+<div align="center">
+ <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/adv_text.png" width=80%><br>
+</div>
+
       - 자연스러운 문장은 아님 : Language model을 고려하지 않음
       
 ## 5. 고찰
   - Adversarial text의 각 word의 embedding 값의 범위 초과
   
-    ![image](https://user-images.githubusercontent.com/26705935/51032155-5424c980-15e2-11e9-89b2-283c57b7fa5f.png)
+<div align="center">
+ <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/adv_weights.png" width=85%><br>
+</div>  
 
     - Optimized adversarial text의 embedding 값이 **기존 word embedding 값의 범위를 초과**함
     - 학습되는 parameter의 weight을 제한하는 기법이 필요함
@@ -65,7 +73,9 @@
     - Language model의 속성을 고려해야 함
     - **k-Nearest Neighbor 기법 + beam search** 적용
     
-      ![image](https://user-images.githubusercontent.com/26705935/51032252-a36afa00-15e2-11e9-8854-591e5745bcc8.png)
+<div align="center">
+ <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/beamsearch.png" width=100%><br>
+</div>    
       
 ## 6. 결론
   - 하나의 모델에 대해 단 하나의 adversarial text를 생성하는 Universal adversarial attack을 NLP 모델에의 적용 연구
