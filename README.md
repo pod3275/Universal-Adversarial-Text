@@ -1,11 +1,11 @@
 # Universal-Adversarial-Text
 
-## Introduction
-
 <div align="center">
  <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/adv_text_purpose.png" width=100%><br>
+<br>
 </div>
 
+## Introduction
 - 주어진 NLP 모델에 대해 **단 하나의 perturbation 문장을 생성함**으로써 모델을 속이는 **Universal Adversarial Attack** 기법
 - Universal adversarial attack에 의해 생성되는 문장은 입력 문장에 추가되고, 이로 인해 문장의 분류 결과는 기존과 다르게 나타남
 - 제안 기법은 baseline 기법에 비해 약간 좋은 성능을 나타내고, 더욱 효율적으로 attack을 수행할 수 있음
