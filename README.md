@@ -1,6 +1,7 @@
 # Universal-Adversarial-Text
 
 <div align="center">
+<br>
  <img src="https://github.com/pod3275/Universal-Adversarial-Text/blob/master/assets/adv_text_purpose.png" width=100%><br>
 <br>
 </div>
